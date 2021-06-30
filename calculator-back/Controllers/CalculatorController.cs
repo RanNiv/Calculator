@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using Model;
 
 namespace calculator_back.Controllers
 {
@@ -25,11 +26,11 @@ namespace calculator_back.Controllers
 
 
 
-     //[Route("api/Calculator/CalculateAction/{num1:int}")]
+   
      [HttpGet]
-        public float CalculateAction(int num1,int num2/*, int num2, int operatorType*/)
+        public CalculationResult CalculateAction(int num1,int num2,int sign)
         {
-            return num1+num2;
+            return new CalculationResult(num1,num2,sign);
 
         }
 
